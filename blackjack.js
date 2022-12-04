@@ -7,7 +7,7 @@ var yourAceCount = 0;
 var hidden;
 var deck;
 
-var canHit = true; //you <= 21
+var canHit = true; //allows the player (you) to draw while yourSum <= 21
 
 window.onload = function() {
     buildDeck();
@@ -22,7 +22,7 @@ function buildDeck() {
 
     for (let i = 0; i < types.length; i++) {
         for (let j = 0; j < values.length; j++) {
-            deck.push(values[j] + "-" + types[i]);
+            deck.push(values[j] + "-" + types[i]); //A-C -> K-C, A-D -> K-D
         }
     }
     // console.log(deck);
@@ -30,7 +30,7 @@ function buildDeck() {
 
 function shuffleDeck() {
     for (let i = 0; i < deck.length; i++) {
-        let j = Math.floor(Math.random() * deck.length);
+        let j = Math.floor(Math.random() * deck.length); // (0-1) * 52 => (0-51.9999)
         let temp = deck[i];
         deck[i] = deck[j];
         deck[j] = temp;

@@ -5,6 +5,149 @@ body {
     color: black;
 }
 
+/*        Hearts        */
+
+.heart, .heart::after{
+    border: 2px solid red;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    width: 10px;
+    height: 8px;
+    border-bottom: 0;
+}
+
+.heart{
+    box-sizing: border-box;
+    position: relative;
+    background-color: red;
+    transform: translate(
+        calc(-10px /2 * var(--ggs, 1)),
+        calc(-6px/ 2 * var(--ggs, 1))
+    )
+    rotate(-45deg)
+    scale(var(--ggs, 1));
+    display: block;
+}
+
+.heart::before{
+    width: 11px;
+    height: 11px;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+    left: -2px;
+    top: 3px;
+    background-color: red;
+}
+
+.heart::after, .heart::before{
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.heart::after{
+    right: -9px;
+    transform: rotate(90deg);
+    top: 5px;
+    background-color: red;
+}
+
+/*    DIAMONDS / OURO    */
+
+.diamonds{
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    left: 99.1%;
+    border: 2px solid red;
+    bottom: 5px;
+    width: 11px;
+    height: 11px;
+    background: red;
+    transform: rotate(45deg);
+}
+
+/*     SPADES / ESPADAS     */
+
+.spades{
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    bottom: 29px;
+    right: 12.5px;
+}
+.spades::after,
+.spades::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    background: currentColor;
+    border-bottom-left-radius: 48px;
+    border-bottom-right-radius: 48px;
+    transform: rotate(-45deg);
+    left: 18px;
+    top: 18px
+}
+.spades::after {
+    transform: rotate(45deg);
+    left: 12px;
+}
+
+.triangle{
+    position: relative;
+    transform: scale(var(--ggs, 1));
+    width: 17px;
+    bottom: 99%;
+    height: 15px;
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid;
+}
+
+.triangle::before, .triangle{
+    display: block;
+    background-attachment: black;
+    box-sizing: border-box;
+    border-right: 3px solid transparent;
+}
+
+.triangle::before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-left: 3px solid;
+    border-top: 3px solid;
+    border-bottom: 3px solid transparent;
+    transform: rotate(45deg) skew(10deg, 10deg);
+    left: -2px;
+    bottom: -10px;
+}
+/*     Trevinho/CLUBS     */
+
+.club{
+    position: absolute;
+    left: 99.1%;
+}
+
+.club::before{
+    content:'';
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: black;
+    border-radius: 4px;
+    width: 4px;
+    height: 4px;
+    left: 5px;
+    top: 4px;
+    box-shadow: -2.5px 4px 0,2.5px 4px 0;
+}
 #dealer-cards img {
     height: 175px;
     width: 125px;
